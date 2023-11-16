@@ -25,14 +25,12 @@ slkey=`cat /etc/slowdns/server.pub`
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[40;1;37m            SSH Account            \E[0m"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-read -p "Username   : " Login
-read -p "Password   : " Pass
-read -p "Limit ip        : " Limit
-read -p "Limit bw      : " bw
-read -p "Limit quota : " quota
+echo -e "\e[1;32m============== [ CREATE SSH ] ===============\033[0m"
+read -p "Username    : " Login
+read -p "Password    : " Pass
+read -p "Limit ip    : " Limit
+read -p "Limit bw    : " bw
+read -p "Limit kuota : " quota
 read -p "Expired (hari): " masaaktif
 
 IP=$(curl -sS ifconfig.me);
@@ -96,32 +94,31 @@ else
 echo -e "\e[1:32m============[ SSH ACCOUNT ]=============\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Username    : $Login" | tee -a /etc/log-create-user.log
 echo -e "Password    : $Pass" | tee -a /etc/log-create-user.log
-echo -e "Ip Vps           : $IP" | tee -a /etc/log-create-user.log
-echo -e "Domain        : $domen" | tee -a /etc/log-create-user.log
-echo -e "======================================="
-echo -e "<<< WEBSOCKET >>>"
-echo -e "$domen:80@$Login:$Pass"
-echo -e "======================================="
-echo-e "<<<< WS - SSL >>>>"
-echo -e "$domen:443@Login:$Pass"
-echo -e "======================================="
-echo -e "U D P"
-echo -e "$domen:1-65535@$Login:$Pass"
-echo -e "======================================="
-echo -e "Limit devic  : $Limit [ DEVIC ]"
-echo -e "Limit BW     : $bw [ GB ]"
+echo -e "Limit devic : $Limit [ DEVIC ]"
+echo -e "Limit BW    : $bw [ GB ]"
 echo -e "Limit quota : $quota [ GB ]"
-echo -e "Melanggar  : Shutdown!!"
+echo -e "Melanggar   : Shutdown!!"
 echo -e "Expired  On : $exp" | tee -a /etc/log-create-user.log
 echo -e "======================================="
-echo -e "SSH                : 22" | tee -a /etc/log-create-user.log
-echo -e "SSH-WS        : 80" | tee -a /etc/log-create-user.log
-echo -e "WS - SSL       : 443" | tee -a /etc/log-create-user.log
-echo -e "SSL                : 447 , 777" | tee -a /etc/log-create-user.log
-echo -e "UDP               : 1-65535" | tee -a /etc/log-create-user.log
+echo -e "<<< WEBSOCKET >>>"
+echo -e "Bug.com:80@$Login:$Pass"
+echo -e "======================================="
+echo -e "<<<< WS - SSL >>>>"
+echo -e "$domen:443@Login:$Pass"
+echo -e "======================================="
+echo -e "<<<< U D P >>>>>"
+echo -e "$domen:1-65535@$Login:$Pass"
+echo -e "======================================="
+echo -e "Ip Vps      : $IP" | tee -a /etc/log-create-user.log
+echo -e "Domain      : $domen" | tee -a /etc/log-create-user.log
+echo -e "SSH         : 22" | tee -a /etc/log-create-user.log
+echo -e "SSH-WS      : 80" | tee -a /etc/log-create-user.log
+echo -e "WS - SSL    : 443" | tee -a /etc/log-create-user.log
+echo -e "SSL         : 447 , 777" | tee -a /etc/log-create-user.log
+echo -e "UDP         : 1-65535" | tee -a /etc/log-create-user.log
 echo -e "SLWDNS      : 443,80,53" | tee -a /etc/log-create-user.log
 echo -e "NS HOST     : $sldomain" | tee -a /etc/log-create-user.log
-echo -e "PUBBKEY    : $slkey" | tee -a /etc/log-create-user.log
+echo -e "PUBBKEY     : $slkey" | tee -a /etc/log-create-user.log
 echo -e "======================================="
 echo -e "PAYLOAD WS - SSL"
 echo -e "
@@ -134,6 +131,7 @@ GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 " | tee -a /etc/log-create-user.log
 echo -e "======================================="
 fi
+echo -e "\e[1:32m============[ THANKS YOUU ]=============\033[0m" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
-read -n 1 -s -r -p " GO TO MENU"
+read -n 1 -s -r -p " ENTERR GO TO MENU"
 menu
