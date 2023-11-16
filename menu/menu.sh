@@ -1,7 +1,7 @@
  #!/bin/bash
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/Lunatic-v5/PERMISSION/ULIN/ip > /root/tmp
+    curl -sS https://raw.githubusercontent.com/DevilsTunnels/PERMISSION/ULIN/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -19,7 +19,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/PERMISSION/ULIN/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/DevilsTunnels/PERMISSION/ULIN/ip | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -36,7 +36,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/PERMISSION/ULIN/ip | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/DevilsTunnels/PERMISSION/ULIN/ip | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -54,7 +54,7 @@ PERMISSION
 if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/PERMISSION/ULIN/ip | grep $MYIP | awk '{print $3}')
+Exp=$(curl -sS https://raw.githubusercontent.com/DevilsTunnels/PERMISSION/ULIN/ip | grep $MYIP | awk '{print $3}')
 fi
 
 # =========================================
@@ -255,7 +255,7 @@ export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 clear
 echo -e "${BIPurple} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIPurple} │                  ${BIWhite}${UWhite}Lunatic Tunneling${NC}"
+echo -e "${BIPurple} │                  ${BIWhite}${UWhite}Devils Tunnels${NC}"
 echo -e "${BIPurple} │"
 echo -e "${BIPurple} │  ${BICyan}OS        :  ${BIYellow}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
 echo -e "${BIPurple} │  ${BICyan}CPU       :  ${BIYellow}$cpu_usage${NC}"
@@ -265,23 +265,23 @@ echo -e "${BIPurple} │  ${BICyan}RAM       :  ${BIYellow}$totalram MB${NC}"
 echo -e "${BIPurple} │  ${BICyan}SWAP RAM  :  ${BIYellow}$uram / $tram MB${NC}"
 echo -e "${BIPurple} │  ${BICyan}IP-VPS    :  ${BIYellow}$IPVPS${NC}"
 echo -e "${BIPurple} │  ${BICyan}REBOOT    :  ${BIYellow}00:00 ( Jam 12 malam )${NC}"
-echo -e "${BIPurple} │  ${BICyan}WHATSAP   :  ${BIYellow}087738534749${NC}"
-echo -e "${BIPurple} │  ${BICyan}DEVELOVER :  ${BIYellow}bestjy${NC}"
+echo -e "${BIPurple} │  ${BICyan}WHATSAP   :  ${BIYellow}0851-6356-7549${NC}"
+echo -e "${BIPurple} │  ${BICyan}DEVELOVER :  ${BIYellow}DevilsTunnels${NC}"
 echo -e "${BIPurple} └─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BIPurple} ┌─────────────────────────────────────────────────────┐${NC}" 
 echo -e "${BIPurple} │  ${BIYellow}SSH         VMESS           VLESS          TROJAN $NC" 
-echo -e "${BIPurple} │  ${Blue} $ssh1            $vma               $vla               $tra $NC" 
+echo -e "${BIPurple} │${NC}  ${Blue} $ssh1            $vma               $vla               $tra $NC" 
 echo -e "${BIPurple} └─────────────────────────────────────────────────────┘${NC}" 
 echo -e "     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
 echo -e "   ${BICyan}     STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
 echo -e "${BIPurple} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIPurple} │  ${BICyan}[${BIWhite}01${BIPurple}] SSH     ${BICyan}[${BIYellow}Menu${BIPurple}]${NC}"  "${BICyan}  [${BIWhite}08${BICyan}] ADD-HOST        ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
-echo -e "${BIPurple} │  ${BICyan}[${BIWhite}02${BIPurple}] VMESS   ${BICyan}[${BIYellow}Menu${BIPurple}]${NC}"  "${BICyan}  [${BIWhite}09${BICyan}] RUNNING         ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
-echo -e "${BIPurple} │  ${BICyan}[${BIWhite}03${BIPurple}] VLESS   ${BICyan}[${BIYellow}Menu${BIPurple}]${NC}"  "${BICyan}  [${BIWhite}10${BICyan}] INSTALL UDP     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
-echo -e "${BIPurple} │  ${BICyan}[${BIWhite}04${BIPurple}] TROJAN  ${BICyan}[${BIYellow}Menu${BIPurple}]${NC}"  "${BICyan}  [${BIWhite}11${BICyan}] INSTALL BOT     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
-echo -e "${BIPurple} │  ${BICyan}[${BIWhite}05${BIPurple}] SETING  ${BICyan}[${BIYellow}Menu${BIPurple}]${NC}"  "${BICyan}  [${BIWhite}12${BICyan}] LOCKED SSH      ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
-echo -e "${BIPurple} │  ${BICyan}[${BIWhite}06${BIPurple}] TRIALL  ${BICyan}[${BIYellow}Menu${BIPurple}]${NC}"  "${BICyan}  [${BIWhite}13${BICyan}] UNLOCK SSH      ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
-echo -e "${BIPurple} │  ${BICyan}[${BIWhite}07${BIPurple}] BACKUP  ${BICyan}[${BIYellow}Menu${BIPurple}]${NC}"  "${BICyan}  [${BIWhite}14${BICyan}] UPDATE SCRIPT   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
+echo -e "${BIPurple} │  ${BICyan}[${BIWhite}01${BICyan}] SSH     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}08${BICyan}] ADD-HOST        ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BIPurple} │${NC}"
+echo -e "${BIPurple} │  ${BICyan}[${BIWhite}02${BICyan}] VMESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}09${BICyan}] RUNNING         ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BIPurple} │${NC}"
+echo -e "${BIPurple} │  ${BICyan}[${BIWhite}03${BICyan}] VLESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}10${BICyan}] INSTALL UDP     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BIPurple} │${NC}"
+echo -e "${BIPurple} │  ${BICyan}[${BIWhite}04${BICyan}] TROJAN  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}11${BICyan}] INSTALL BOT     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BIPurple} │${NC}"
+echo -e "${BIPurple} │  ${BICyan}[${BIWhite}05${BICyan}] SETING  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}12${BICyan}] LOCKED SSH      ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BIPurple} │${NC}"
+echo -e "${BIPurple} │  ${BICyan}[${BIWhite}06${BICyan}] TRIALL  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}13${BICyan}] UNLOCK SSH      ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BIPurple} │${NC}"
+echo -e "${BIPurple} │  ${BICyan}[${BIWhite}07${BICyan}] BACKUP  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}14${BICyan}] UPDATE SCRIPT   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BIPurple} │${NC}"
 echo -e "${BIPurple} └─────────────────────────────────────────────────────┘${NC}"
 DATE=$(date +'%d %B %Y')
 datediff() {
@@ -291,8 +291,7 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "        ${BIPurple}┌─────────────────────────────────────┐${NC}"
-echo -e "        ${BIPurple}│$NC Version       : $(cat /opt/.ver) Last Update ${NC}"
-echo -e "        ${BIPurple}│$NC ${GREEN}User          :\033[1;36m $Name \e[0m"
+echo -e "        ${BIPurple}│$NC User          :\033[1;36m $Name \e[0m"
 if [ $exp \< 1000 ];
 then
 echo -e "          $BICyan1│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"

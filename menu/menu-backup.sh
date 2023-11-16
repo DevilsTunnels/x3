@@ -8,16 +8,19 @@ ungu='\033[0;35m'
 Green="\033[32m"
 Red="\033[31m"
 WhiteB="\e[5;37m"
+BIWhite="\e[1;37m"
+BICyan="\e[1;36m"
 BlueCyan="\e[5;36m"
 Green_background="\033[42;37m"
 Red_background="\033[41;37m"
 Suffix="\033[0m"
+NC="\033[0m"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "       ${BIWhite}${UWhite}BACKUP DATA ${NC}"
 echo -e ""
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Backup Data Vps      "
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Restore Data Vps    "
-echo -e "     ${BICyan}[${BIWhite}•0${BICyan}] Back To Menu     "
+echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Backup Data Vps   "
+echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Restore Data Vps  "
+echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Back To Menu      "
 
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo
@@ -30,7 +33,7 @@ figlet "backup" | lolcat
 backup
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script Lunatic"
+echo "Terimakasih sudah menggunakan layanan script DevilsTunnels"
 echo
 echo "--------------------------------------------------------"
 fi
@@ -41,17 +44,16 @@ figlet "Restore" | lolcat
 restore
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script Lunatic"
+echo "Terimakasih sudah menggunakan layanan script DevilsTunnels"
 echo
 echo "--------------------------------------------------------"
 fi
 if [ $bro = 3 ] || [ $bro = 3 ]
 then
-figlet "strt"
-strt
+menu
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script Lunatic"
+echo "Terimakasih sudah menggunakan layanan script DevilsTunnels"
 echo
 echo "--------------------------------------------------------"
 fi
@@ -60,7 +62,7 @@ then
 limitspeed
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script Lunatic"
+echo "Terimakasih sudah menggunakan layanan script DevilsTunnels"
 echo
 echo "--------------------------------------------------------"
 fi
@@ -70,7 +72,7 @@ then
 autobackup
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script Lunatic"
+echo "Terimakasih sudah menggunakan layanan script DevilsTunnels"
 echo
 echo "--------------------------------------------------------"
 fi
