@@ -45,8 +45,14 @@ systemctl restart trojan-go.service
 link="trojan-go://${uuid}@isi_bug_disini:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
 link1="trojan://${uuid}@isi_bug_disini:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
 clear
-echo -e "=============== [ T R G O ] ==============="
-echo -e "Remarks    : ${user}" | tee -a /etc/log-create-user.log
+echo -e "\e[1;32m================== [ TROGO ] ==================\033[0m"
+echo -e "Remarks   : ${user}" | tee -a /etc/log-create-user.log
+echo -e "Limit dev : $Limit [  IP ]"
+echo -e "Limit BW  : $bw [ GB ]"
+echo -e "Limit quta: $quota [ GB ]"
+echo -e "Created   : $hariini" | tee -a /etc/log-create-user.log
+echo -e "Expired   : $exp" | tee -a /etc/log-create-user.log
+echo -e "\e[1;32m================== [ SERVC ] ==================\033[0m"
 echo -e "IP/Host    : ${MYIP}" | tee -a /etc/log-create-user.log
 echo -e "Address    : ${domain}" | tee -a /etc/log-create-user.log
 echo -e "Port       : ${trgo}" | tee -a /etc/log-create-user.log
@@ -59,12 +65,8 @@ echo -e "TrGo  		: ${link}" | tee -a /etc/log-create-user.log
 echo -e "=========="
 echo -e "Link TrGo (v2rayNG)	: ${link1}" | tee -a /etc/log-create-user.log
 echo -e "=========="
-echo -e "Limit devic  : $Limit"
-echo -e "Limit BW     : $bw"
-echo -e "Limit quota : $quota"
-echo -e "Created    : $hariini" | tee -a /etc/log-create-user.log
-echo -e "Expired    : $exp" | tee -a /etc/log-create-user.log
-echo -e "=============== [ THANKS ] ==============="
+echo -e ""
+echo -e "\e[1;32m================== [ THANK ] ==================\033[0m"
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 

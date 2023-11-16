@@ -50,30 +50,34 @@ vlesslink2="vless://${uuid}@${domain}:$none?path=/vless&encryption=none&type=ws#
 vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
 systemctl restart xray
 clear
-echo -e "=============== [ VLESS ] ==============="
-echo -e "Remarks        : ${user}" | tee -a /etc/log-create-user.log
-echo -e "Domain         : ${domain}" | tee -a /etc/log-create-user.log
-echo -e "port TLS       : $tls" | tee -a /etc/log-create-user.log
-echo -e "port none TLS  : $none" | tee -a /etc/log-create-user.log
-echo -e "id             : ${uuid}" | tee -a /etc/log-create-user.log
-echo -e "Encryption     : none" | tee -a /etc/log-create-user.log
-echo -e "Network        : ws" | tee -a /etc/log-create-user.log
-echo -e "Path           : /vless" | tee -a /etc/log-create-user.log
-echo -e "Path           : vless-grpc" | tee -a /etc/log-create-user.log
+echo -e "\e[1;32m================== [ VLESS ] ==================\033[0m"
+echo -e "Remarks   : ${user}" | tee -a /etc/log-create-user.log
+echo -e "Limit ip  : $Limit [ IP ]"
+echo -e "Limit BW  : $bw [ GB ]"
+echo -e "Limit quta: $quota [ GB ]"
+echo -e "Expired   : $exp [ DAYS ]" | tee -a /etc/log-create-user.log
+echo -e "\e[1;32m================== [ SERVC ] ==================\033[0m"
+echo -e "Domain    : ${domain}" | tee -a /etc/log-create-user.log
+echo -e "pTLS      : $tls" | tee -a /etc/log-create-user.log
+echo -e "WS        : $none" | tee -a /etc/log-create-user.log
+echo -e "id        : ${uuid}" | tee -a /etc/log-create-user.log
+echo -e "Encrypt   : none" | tee -a /etc/log-create-user.log
+echo -e "Network   : ws" | tee -a /etc/log-create-user.log
+echo -e "Path      : /vless" | tee -a /etc/log-create-user.log
+echo -e "Path      : vless-grpc" | tee -a /etc/log-create-user.log
 echo -e " "
-echo -e "=========="
-echo -e "TLS           : ${vlesslink1}" | tee -a /etc/log-create-user.log
-echo -e "=========="
-echo -e "WS            : ${vlesslink2}" | tee -a /etc/log-create-user.log
-echo -e "=========="
-echo -e "GRPC      : ${vlesslink3}" | tee -a /etc/log-create-user.log
-echo -e "=========="
+echo -e "==========="
+echo -e "TLS       :"
+echo -e "${vlesslink1}" | tee -a /etc/log-create-user.log
+echo -e "==========="
+echo -e "WS        :"
+echo -e "${vlesslink2}" | tee -a /etc/log-create-user.log
+echo -e "==========="
+echo -e "GRPC      :"
+echo -e "${vlesslink3}" | tee -a /etc/log-create-user.log
+echo -e "==========="
 echo -e ""
-echo -e "Limit devic  : $Limit"
-echo -e "Limit BW     : $bw"
-echo -e "Limit quota : $quota"
-echo -e "Expired On  : $exp" | tee -a /etc/log-create-user.log
-echo -e "=============== [ THANKS ] ==============="
+echo -e "\e[1;32m================== [ THANK ] ==================\033[0m"
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 

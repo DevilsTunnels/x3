@@ -102,32 +102,36 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
-echo -e "=============== [ VMESS ] ==============="
-echo -e "Remarks        : ${user}" | tee -a /etc/log-create-user.log
-echo -e "Domain         : ${domain}" | tee -a /etc/log-create-user.log
-echo -e "Port TLS       : 443" | tee -a /etc/log-create-user.log
-echo -e "Port none TLS  : 80" | tee -a /etc/log-create-user.log
-echo -e "Port  GRPC     : 443" | tee -a /etc/log-create-user.log
-echo -e "id             : ${uuid}" | tee -a /etc/log-create-user.log
-echo -e "alterId        : 0" | tee -a /etc/log-create-user.log
-echo -e "Security       : auto" | tee -a /etc/log-create-user.log
-echo -e "Network        : ws" | tee -a /etc/log-create-user.log
-echo -e "Path           : /vmess" | tee -a /etc/log-create-user.log
-echo -e "ServiceName    : vmess-grpc" | tee -a /etc/log-create-user.log
+echo -e "\e[1;32m================== [ VMESS ] ==================\033[0m"
+echo -e "Remarks  : ${user}" | tee -a /etc/log-create-user.log
+echo -e "Limit dev: $Limit [ IP ]"
+echo -e "Limit BW : $bw [ GB ]"
+echo -e "Limit qta: $quota [ GB ]"
+echo -e "Expired  : $exp [ DAYS ]" | tee -a /etc/log-create-user.log
+echo -e "\e[1;32m================== [ SERVC ] ==================\033[0m"
+echo -e "Domain   : ${domain}" | tee -a /etc/log-create-user.log
+echo -e "TLS      : 443 & 8443" | tee -a /etc/log-create-user.log
+echo -e "WS       : 80 & 8080" | tee -a /etc/log-create-user.log
+echo -e "GRPC     : 443" | tee -a /etc/log-create-user.log
+echo -e "id       : ${uuid}" | tee -a /etc/log-create-user.log
+echo -e "alterId  : 0" | tee -a /etc/log-create-user.log
+echo -e "Security : auto" | tee -a /etc/log-create-user.log
+echo -e "Network  : ws" | tee -a /etc/log-create-user.log
+echo -e "Path     : /vmess" | tee -a /etc/log-create-user.log
+echo -e "Service  : vmess-grpc" | tee -a /etc/log-create-user.log
 echo -e ""
 echo -e "=========="
-echo -e "TLS              : ${vmesslink1}" | tee -a /etc/log-create-user.log
+echo -e "TLS       :"
+echo -e "${vmesslink1}" | tee -a /etc/log-create-user.log
 echo -e "=========="
-echo -e "WS               : ${vmesslink2}" | tee -a /etc/log-create-user.log
+echo -e "WS        :"
+echo -e "${vmesslink2}" | tee -a /etc/log-create-user.log
 echo -e "=========="
-echo -e "GRPC           : ${vmesslink3}" | tee -a /etc/log-create-user.log
+echo -e "GRPC      :"
+echo -e "${vmesslink3}" | tee -a /etc/log-create-user.log
 echo -e "=========="
 echo -e ""
-echo -e "Limit devic  : $Limit"
-echo -e "Limit BW     : $bw"
-echo -e "Limit quota : $quota"
-echo -e "Expired On     : $exp" | tee -a /etc/log-create-user.log
-echo -e "=============== [ THANKS ] ==============="
+echo -e "\e[1;32m================== [ THANK ] ==================\033[0m"
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 
